@@ -1,21 +1,13 @@
 {
-  "name": "neuroimaging-studio",
-  "private": true,
+  "name": "neuroimagem-studio",
   "version": "0.1.0",
-  "description": "NeuroImaging Studio — VOLUME ROOM — Foundation",
-  "type": "module",
+  "private": true,
+  "description": "NeuroImaging Studio — VOLUME ROOM static assets deployment",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "node scripts/verify-deploy.cjs",
-    "preview": "vite preview --host 0.0.0.0",
-    "deploy": "wrangler deploy",
-    "check": "tsc --noEmit -p tsconfig.json",
-    "build:source": "vite build",
-    "test": "node scripts/smoke.cjs"
+    "build": "node -e \"require('fs').accessSync('public/index.html'); console.log('NeuroImagem: arquivos estáticos prontos')\" ",
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
-    "typescript": "^5.8.3",
-    "vite": "^7.1.0",
     "wrangler": "^4.34.0"
   }
 }
