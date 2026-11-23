@@ -1,0 +1,31 @@
+NEUROIMAGING STUDIO - FASE 1 - VERSÃO GITHUB CORRIGIDA
+
+IMPORTANTE: O GITHUB NÃO DESCOMPACTA UM ARQUIVO ZIP AUTOMATICAMENTE.
+
+1. Baixe o ZIP e clique com o botão direito -> Extrair tudo.
+2. Abra a pasta extraída e selecione TUDO que está dentro dela.
+   - É importante selecionar inclusive as pastas dist, docs, public, scripts e src.
+   - Os arquivos package.json, wrangler.jsonc, index.html e a pasta dist
+     devem ficar diretamente na RAIZ do repositório GitHub.
+3. GitHub -> seu repositório -> Add file -> Upload files.
+   Arraste os arquivos E AS PASTAS selecionados e confirme em Commit changes.
+4. Cloudflare -> Workers & Pages -> Worker -> conectar repositório GitHub.
+   Root directory: / (raiz do repositório)
+   Build command: npm run build
+   Deploy command: npx wrangler deploy
+5. Confirme que o nome do Worker no Cloudflare corresponde ao nome
+   no arquivo wrangler.jsonc: neuroimaging-studio.
+
+ESTA VERSÃO NÃO REQUER VITE PARA O BUILD DE PUBLICAÇÃO:
+O comando npm run build valida a pasta dist, que já contém a aplicação compilada.
+As alterações futuras no código-fonte devem ser recompiladas com
+'npm run build:source' por uma pessoa ou processo com dependências instaladas.
+
+NÃO envie somente o arquivo ZIP para o GitHub.
+NÃO envie somente a pasta dist se quiser continuar desenvolvendo o app.
+NÃO coloque todo o conteúdo dentro de uma subpasta no repositório.
+NÃO utilize Cloudflare Pages e Workers para o mesmo deploy.
+
+CONTEÚDO DA FASE 1: protótipo educacional funcional com interface,
+5 aulas inaugurais, estrutura de 50 capítulos, casos textuais e PWA.
+DICOM e PlayCanvas serão implementados nas fases posteriores.
