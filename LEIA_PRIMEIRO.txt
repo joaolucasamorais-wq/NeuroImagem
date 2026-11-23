@@ -1,0 +1,15 @@
+NEUROIMAGEM - ARQUIVO PRONTO PARA GITHUB
+
+1) EXTRAIA o ZIP.
+2) ENTRE NA PASTA extraída.
+3) SELECIONE os arquivos E a pasta public.
+4) ENVIE para o GitHub (NeuroImagem) em Add file > Upload files > Commit changes.
+5) NO CLOUDFLARE WORKERS:
+   Build command: (DEIXE EM BRANCO)
+   Deploy command: npx wrangler deploy
+   Root directory: / ou em branco
+   Nome do Worker: neuroimagem
+
+Este pacote não precisa de npm run build, não precisa de Vite, não precisa instalar Node no seu computador.
+
+Se o Cloudflare apresentar erro, copie a mensagem exata do log, não altere comandos aleatoriamente.
