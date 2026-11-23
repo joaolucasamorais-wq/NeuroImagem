@@ -1,0 +1,6 @@
+/* NeuroImaging Studio: shell education only, no caching of imported scans */
+const CACHE = 'neuroimagem-volume-room-github-fix-20261123';
+const SHELL = ['/', '/index.html', '/manifest.webmanifest', '/icon.svg', '/icons/icon-192.png', '/icons/icon-512.png'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(async c=>{await Promise.allSettled(SHELL.map(x=>c.add(x)));await self.skipWaiting();}));});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(x=>x.startsWith('neuroimagem-')||x.startsWith('neuroimaging-')).filter(x=>x!==CACHE).map(x=>caches.delete(x)))).then(()=>self.clients.claim()));});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{if(res.ok&&e.request.mode==='navigate'){const c=res.clone();caches.open(CACHE).then(cache=>cache.put(e.request,c));}return res;}).catch(()=>e.request.mode==='navigate'?caches.match('/index.html'):Response.error())));});
