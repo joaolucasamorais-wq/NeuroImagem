@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "NeuroImaging Studio — VOLUME ROOM",
+  "short_name": "NeuroImaging",
+  "description": "Laboratório educacional de neurorradiologia",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B0E14",
+  "theme_color": "#0B0E14",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
